@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InsureBot 2025</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="chat-box">
+      <h1>🤖 InsureBot 2025</h1>
+      <button id="start-btn">▶️ Start Voice Chat</button>
+      <p id="status">🟡 Waiting...</p>
+      
+      <div id="chat-output"></div>
+    </div>
+
+    <div class="avatar-box">
+      <video id="avatarVideo" autoplay muted loop>
+        <source id="videoSource" src="/static/blinking.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* black background */
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align to the top */
+  min-height: 100vh; /* Take full viewport height */
+}
+
+.chat-box {
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px; /* Limit width */
+  width: 100%;
+  margin-right: 20px; /* Space between chat and video */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.5); /* Blue glow */
+}
+
+h1 {
+  color: #00aaff;
+  margin-top: 0;
+}
+
+button#start-btn, button#send-text-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #00aaff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  margin-top: 10px; /* Space below h1 */
+  transition: background 0.3s ease;
+}
+
+button#start-btn:hover, button#send-text-btn:hover {
+  background: #0088cc;
+}
+
+button#start-btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+p#status {
+  font-style: italic;
+  margin-top: 10px;
+  color: #aaa;
+}
+
+.text-input-area {
+    display: flex;
+    margin-top: 15px;
+    gap: 10px; /* Space between input and button */
+}
+
+#text-input {
+    flex-grow: 1; /* Allow input to take available space */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #00aaff;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+}
+
+#text-input::placeholder {
+    color: #bbb;
+}
+
+#chat-output {
+  margin-top: 20px;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: left;
+  max-height: 400px; /* Limit chat output height */
+  overflow-y: auto; /* Enable scrolling */
+  border: 1px solid #444;
+  flex-grow: 1; /* Allow chat output to expand */
+}
+
+#chat-output p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+#chat-output strong {
+  color: #00aaff;
+}
+
+#chat-output span {
+  color: red; /* For error messages */
+}
+
+
+.avatar-box {
+  width: 40vw; /* Take 40% of viewport width */
+  height: 100vh;
+  position: relative; /* Make it a positioning context for the video */
+}
+
+video#avatarVideo {
+  position: fixed; /* Fixed position relative to viewport */
+  top: 0;
+  right: 0;
+  width: 40vw;
+  height: 100vh;
+  object-fit: cover; /* Cover the entire area without distorting aspect ratio */
+  z-index: -1; /* Send to background */
+  transition: opacity 0.3s ease-in-out; /* THIS IS THE KEY CSS FOR TRANSITION */
+}
+
+/* Scrollbar styling for chat-output */
+#chat-output::-webkit-scrollbar {
+  width: 8px;
+}
+
+#chat-output::-webkit-scrollbar-track {
+  background: #333;
+  border-radius: 10px;
+}
+
+#chat-output::-webkit-scrollbar-thumb {
+  background: #00aaff;
+  border-radius: 10px;
+}
+
+#chat-output::-webkit-scrollbar-thumb:hover {
+  background: #0088cc;
+}
